@@ -25,12 +25,12 @@ var_dump($resultado);/*imprimi todas as informações do banco*/
             <td>nome</td>
             <td>Ações</td>
         </tr>
-        <?php foreach ($resultado as $lista) { ?>
+        <?php foreach ($resultado as $linha) { ?> 
             <tr>
-                <td> <?= $lista['id'] ?> </td>
-                <td> <?php echo $lista['nome'] ?> </td>
+                <td> <?= $linha['id'] ?> </td>
+                <td> <?php echo $linha['nome'] ?> </td>
                 <td>
-                    <a href="#" class="btn btn-primary" href="#" role="button">Abrir</a>
+                    <a href="./ficha.php?id_aluno<?= $linha['id'] ?>" class="btn btn-primary" href="#" role="button">Abrir</a>
                     <a href="#" class="btn btn-warning" href="#" role="button">Editar</a>
                     <a href="#" class="btn btn-danger" href="#" role="button">Excluir</a>
                 </td>
