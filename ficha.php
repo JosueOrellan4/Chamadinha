@@ -1,16 +1,14 @@
-<?php
+<?php 
 
-$id_aluno = $_GET['id_aluno'];
+$id_alunos = $_GET['Id_alunos'];
 
-
-$dsn = 'mysql:dbname=db_ti24;host=127.0.0.1'; /*adaptar para nossa realidade quando fazer a conexão*/
+$dsn = 'mysql:dbname=db_ti24;host=127.0.0.1';
 $user = 'root';
 $password = '';
 
-
 $banco = new PDO($dsn, $user, $password);
 
-$select = 'SELECT * FROM tb_info_alunos WHERE id_aluno = ' . $id_aluno ;
+$select = "SELECT * FROM tb_info_alunos where Id_alunos = " . $id_alunos;
 
 $dados = $banco->query($select)->fetch();
 
@@ -19,17 +17,10 @@ $dados = $banco->query($select)->fetch();
 
 
 
-
-
-
-
-
-
-
-
-
-
 ?>
+
+
+
 
 
 
@@ -43,34 +34,40 @@ $dados = $banco->query($select)->fetch();
     }
 
     form {
-        width: 750px;
+        width: 600px;
     }
+
     img{
         width: 200px;
         object-fit: cover;
     }
+
 </style>
 
+
 <main class="container text-center my-5">
-    <img src="./dexter.jpg" alt="imagem de perfil" class="img-thumbnail">
+
+    <img src="./img/<?php echo $dados['img'] ?>" alt="">
 
     <form action="#">
         <label for="nome">Nome</label>
-        <input type="text" value="Dexter Morgan" disabled class="form-control">
+        <input type="text" value="<?php echo $dados['Nome']?>" disabled class="form-control">
+
         <div class="row mt-2">
             <div class="col">
                 <label for="telefone">Telefone</label>
-                <input type="number" value="<?php echo $dados ['telefone'] ?>" disableed class="form-control">
+                <input type="number" value="<?php echo $dados['telefone'] ?>" disabled class="form-control">
             </div>
             <div class="col">
-                <label for="email">E-mail</label>
-                <input type="email" value="paulo.hsantos26@senacsp.edu.br" disabled class="form-control">
+                <label for="email">email</label>
+                <input type="email" value="<?php echo $dados['email'] ?>" disabled class="form-control">
             </div>
         </div>
+
         <div class="row mt-2">
             <div class="col">
                 <label for="data_nascimento">Data Nascimento</label>
-                <input type="date" value="2003-05-24" disabled class="form-control">
+                <input type="date" value="<?php echo $dados['nascimento'] ?>" disabled class="form-control">
             </div>
             <div class="col my-4 pt-2">
                 <input type="checkbox" class="form-check-input">
@@ -78,15 +75,6 @@ $dados = $banco->query($select)->fetch();
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
     </form>
+
+</main>
