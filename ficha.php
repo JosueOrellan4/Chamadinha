@@ -8,7 +8,7 @@ $password = '';
 
 $banco = new PDO($dsn, $user, $password);
 
-$select = "SELECT * FROM tb_info_alunos where Id_alunos = " . $id_alunos;
+$select = 'SELECT tb_info_alunos.*, tb_alunos.nome FROM tb_info_alunos INNER JOIN tb_alunos ON tb_alunos.id = tb_info_alunos.id_alunos  WHERE tb_info_alunos.id = ' . $id_alunos;
 
 $dados = $banco->query($select)->fetch();
 
@@ -51,7 +51,7 @@ $dados = $banco->query($select)->fetch();
 
     <form action="#">
         <label for="nome">Nome</label>
-        <input type="text" value="<?php echo $dados['Nome']?>" disabled class="form-control">
+        <input type="text" value="<?php echo $dados ['nome']  ?>" disabled class="form-control">
 
         <div class="row mt-2">
             <div class="col">
