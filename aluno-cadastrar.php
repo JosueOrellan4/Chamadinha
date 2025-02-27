@@ -5,9 +5,7 @@ var_dump(
 );
 
 $nomeFormulario = $_POST['Nome'];
-$telefoneFormulario=$_POST['tel'];
-$emailFormulario=$_POST['email'];
-$nascimentoFormulario=$_POST['nascimento'];
+
 
 
 $dsn = 'mysql:dbname=db_ti24;host=127.0.0.1';
@@ -18,10 +16,9 @@ $banco = new PDO($dsn, $user, $password);
 
 $insert = 'INSERT INTO tb_alunos (nome) VALUES (:nome)'; /*script*/ 
 
-$insert2 = 'INSERT INTO tb_info_alunos(telefone, email, nascimento) VALUES (:telefone, :email, :nascimento';
 
 $box = $banco->prepare($insert);
-$box2 = $banco->prepare($insert2);
+
 
 $box->execute([
     ':nome'=> $nomeFormulario/*script executado*/ 
@@ -29,10 +26,28 @@ $box->execute([
 
 ]);
 
-$box2->execute([
-    ':telefone'=>$telefoneFormulario,
-    ':email'=>$emailFormulario,
-    ':nascimento'=>$nascimentoFormulario
+
+
+$telefoneFormulario=$_POST['tel'];
+$emailFormulario=$_POST['email'];
+$nascimentoFormulario=$_POST['nascimento'];
+$frequenteFormulario=$_POST['frequente'];
+$imagemFormulario=$_POST['img'];
+
+$id_aluno = $banco->lastInsertId();
+
+
+$insert2 = 'INSERT INTO tb_info_alunos(telefone, email, nascimento, frequente, id_alunos, img) VALUES (:telefone, :email, :nascimento, :frequente, :id_alunos, :img)';
+
+$box = $banco->prepare($insert2);
+
+$box->execute([
+    ':telefone' => $telefoneFormulario,
+    ':email' => $emailFormulario,
+    ':nascimento' => $nascimentoFormulario,
+    ':frequente' => $frequenteFormulario,
+    ':img' => $imagemFormulario,
+    ':id_alunos' => $id_aluno,
 ]);
 
 $id_aluno = $banco->lastInsertId();
