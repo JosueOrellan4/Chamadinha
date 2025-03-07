@@ -24,12 +24,12 @@ $banco->prepare($update)->execute([
 
 $editarTel = $_POST['tel'];
 $editarEmail = $_POST['email'];
-$editarIdaluno = $_POST['id_aluno'];
 
-$update2 = 'UPDATE tb_info_alunos SET tel = :tel, email = :email WHERE id_alunos = :id_alunos';
 
-$banco->prepare($update2)->execute([
-    ':tel' => $editarTel,
-    ':email' => $editarEmail,
-    ':id_alunos' => $editarIdaluno
+$update = 'UPDATE tb_info_alunos SET telefone = :telefone, email = :email WHERE id = :id';
+
+$banco->prepare($update)->execute([
+    ':id'  => $editarId,
+    ':telefone' => $editarTel,
+    ':email' => $editarEmail
 ]);

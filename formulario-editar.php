@@ -99,8 +99,6 @@ $dados = $banco->query($select)->fetch();
         
         <input type="text" class="form-control" placeholder="nome"      name="Nome"     value="<?=$dados['nome'] ?>">
 
-        <input type="hidden" class="form-control" placeholder="id"      name="id_aluno"     value="13">
-
         <input type="number" class="form-control" placeholder="telefone" name="tel" value="<?=$dados['telefone']?>">
 
         <input type="email" class="form-control" placeholder="email"     name="email"    value="<?=$dados['email']?>">
