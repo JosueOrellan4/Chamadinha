@@ -16,41 +16,42 @@ form{
         
     
 }
-@keyframes fadeIn {
+@keyframes fadeIn { /*nessa linha estamos usando uma animação chamada fade in que cria um efeito de transição suave que torna um elemento visivel gradualmente*/
     0% {
-      opacity: 0;
+      opacity: 0; /*na hora que o usuario entrar na pagina o elemento ele vai ficar "invisivel"*/ 
     }
     100% {
-      opacity: 1;
+      opacity: 1;/*depois disso ele vai ficar com opacity 1 entao 100% visivel*/ 
     }
   }
 
   h2 {
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 2s ease-out;  /*aqui estamos aplicando o efeito ao h2 da pagina 2s de duração e ease-out a animação começa rapido e desacelera */
   }
 
-h2{
-    animation: fadeIn 2s ease-out; /* */ 
-}
+
+
 
 
 
 .form-control{
-    width: 350px; /* */ 
+    width: 350px; /* definindo uma largura pro formulario*/ 
 }
 .form-control {
-    transition: border 0.3s ease, box-shadow 0.3s ease; /* */ 
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* aqui eu defini uma transição suave para a borda e a sombra dos input do form que dura 0.3s e a animação começa devagar e depois desacelera */  
 }
 
 .form-control:focus {
-    border-color: #007bff; /*define a cor do botao*/ 
+    border-color: #007bff; /*aqui estou aplcando pra ele mudar a cor da borda para um azul claro apos ele interagir com algum input*/ 
 }
 
 button{
-width: 150px;} /*define a largura do botao */ 
+
+width: 150px;
+} /*define a largura do botao */ 
 
 .btn-custom {
-    transition: transform 0.3s ease, background-color 0.3s ease; /* cria uma animação simples que expande o botao na hora que o usuario passa o ponteiro por cima do botao*/ 
+    transition: transform 0.3s ease, background-color 0.3s ease; /*aqui estou falando para ele criar uma animação simples na hora que o usuario interagir com o botao enviar  */ 
 }
 
 .btn-custom:hover {
@@ -84,23 +85,23 @@ fala para onde deve enviar os dados
         <input type="text" class="form-control" placeholder="Nome" name="Nome"> <!-- nessa linha criamos um input onde o usuario vai cadastar o nome e identificamos o nome desse input -->
 
         
-        <input type="number" class="form-control" placeholder="Telefone" name="tel"> <!-- -->
+        <input type="number" class="form-control" placeholder="Telefone" name="tel"> <!--  nessa linha criamos um input onde o usuario vai cadastar o telefone e identificamos o nome desse input -->
 
-        <input type="email" class="form-control" placeholder="Email" name="email"> <!-- -->
+        <input type="email" class="form-control" placeholder="Email" name="email"> <!--nessa linha criamos um input onde o usuario vai cadastar o email e identificamos o nome desse input -->
 
-        <input type="date" class="form-control" placeholder="Data de Nascimento" name="nascimento"> <!-- -->
+        <input type="date" class="form-control" placeholder="Data de Nascimento" name="nascimento"> <!--nessa linha criamos um input onde o usuario vai definir a data de nascimento dele por meio de um calendario interativo e identificamos o nome desse input -->
 
-        <div> <!-- -->
+         <div> <!--div para agrupar os elementos  -->
             
-            <input type="checkbox" class="form-check-input" name="frequente">
-            <label class="form-check-label" for="frequente">Frequente?</label>
+             <input type="checkbox" class="form-check-input" id="frequente" name="frequente">  <!-- aqui eu criei uma caixa de marcar e desmarcar e adicionei uma estilização pronta do boostrap e identifiquei o nome dele -->
+             <label class="form-check-label" for="frequente">Frequente?</label> <!-- aqui eu criei um label que seria um texto junto do check box e adicionei um for caso o usuario clique no texto tambem marque e desmarque o checkbox  -->
     </div>
 
-        <input type="file" name="img" accept="image/*"> <!-- -->
+        <input type="file" name="img" accept="image/*"> <!-- aqui eu criei um input tipo imagem onde o usuario vai salvar uma imagem -->
             
         
 
-        <button type="submit" class="btn btn-primary btn-custom">Enviar</button> <!-- -->
+        <button type="submit" class="btn btn-primary btn-custom">Enviar</button> <!-- butao de enviar pra quando o usuario ja tenha preenchido todos os campos do formulario junto com uma estilização definida no class-->
 
     </form>
 </main>

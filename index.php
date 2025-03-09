@@ -7,7 +7,7 @@ $dsn = 'mysql:dbname=db_ti24;host=127.0.0.1'; //isso daqui e a string de conexao
 $user = 'root'; //aqui acessamos o banco de dados com o usuario root
 $password = ''; //aqui colocamos a senha password. como nosso banco de dados nao tem senha entao deixamos vazio.
 
-$banco = new PDO($dsn, $user, $password); //aqui ele cria uma instancia que podemos usar para executar consultar sql 
+$banco = new PDO($dsn, $user, $password); //aqui ele cria uma instancia que podemos usar para executar consultas sql 
 
 $select = "SELECT * FROM tb_alunos"; //aqui criamos uma variavel com um script sql que consulta a tabela tb_alunos do banco de dados
 

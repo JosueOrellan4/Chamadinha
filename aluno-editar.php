@@ -1,7 +1,7 @@
 <?php
-echo '<h1>ALuno Editar</h1>';
+echo '<h1>Aluno Editar</h1>'; /*vai imprimir o titulo aluno editar no site*/ 
 
-var_dump($_POST);
+var_dump($_POST); 
 
 $editarId = $_POST['id'];
 $editarNome = $_POST['Nome'];
