@@ -56,7 +56,7 @@ $box->execute([
     ':img' => $imagemFormulario,/* aqui ele esta pegando a variavel box onde esta o script que seleciona minha tabela executa para que o pleaceholder img receba os dados do campo imagemFormulario*/ 
 
     ':id_alunos' => $id_aluno,  /*aqui ele receba o valor da variavel id aluno que seria o ultimo id inserido*/ 
-])
+]);
 
 $id_aluno = $banco->lastInsertId(); //recupera o ultimo id inserido
 
